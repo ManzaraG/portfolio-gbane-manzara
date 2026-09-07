@@ -1,0 +1,92 @@
+.experienceSection {
+  background: var(--pale);
+}
+
+.timeline {
+  max-width: 1050px;
+}
+
+.timeline article {
+  display: grid;
+  grid-template-columns: 150px 24px 1fr;
+  gap: 25px;
+  min-height: 245px;
+}
+
+.time strong,
+.time span {
+  display: block;
+}
+
+.time span {
+  color: var(--muted);
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  background: var(--blue);
+  border-radius: 50%;
+  margin-top: 5px;
+  position: relative;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 230px;
+  background: var(--line);
+  left: 6px;
+  top: 13px;
+}
+
+.timeline article:last-child .dot::after {
+  display: none;
+}
+
+.job {
+  padding-bottom: 50px;
+}
+
+.job > span {
+  font-weight: 800;
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+
+.job h3 {
+  font-size: 28px;
+  margin: 7px 0 14px;
+}
+
+.job p {
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.chips b {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 5px 11px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .timeline article {
+    grid-template-columns: 1fr;
+  }
+
+  .dot {
+    display: none;
+  }
+}

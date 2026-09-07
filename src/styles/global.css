@@ -1,0 +1,107 @@
+:root {
+  --ink: #172435;
+  --muted: #647184;
+  --blue: #1769e0;
+  --blue2: #0d55bf;
+  --pale: #f3f7fc;
+  --line: #dce4ed;
+  --white: #fff;
+  --dark: #101d2f;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Manrope, sans-serif;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Primitives de mise en page partagées entre les sections */
+.section {
+  padding: 110px max(7.5vw, 24px);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 50px;
+}
+
+.section-head h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -2px;
+}
+
+.section-head > p {
+  max-width: 480px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.eyebrow,
+.kicker,
+.tag {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.kicker {
+  margin: 0 0 10px;
+}
+
+@media (max-width: 650px) {
+  .section {
+    padding-top: 78px;
+    padding-bottom: 78px;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head > p {
+    margin-top: 18px;
+  }
+}
+
+/* Animation d'apparition au scroll (voir hooks/useReveal.ts) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
